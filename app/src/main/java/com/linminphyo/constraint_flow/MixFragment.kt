@@ -5,10 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
+import androidx.appcompat.widget.AppCompatSeekBar
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.fragment.app.Fragment
 import androidx.transition.TransitionManager
-import kotlinx.android.synthetic.main.layout_mix_attributes.*
+import com.google.android.material.button.MaterialButtonToggleGroup
 
 /**
  * Created by lin min phyo on 2019-09-07.
@@ -16,6 +17,36 @@ import kotlinx.android.synthetic.main.layout_mix_attributes.*
 
 
 class MixFragment : Fragment() {
+
+    val parent : ViewGroup
+        get() = requireView() as ViewGroup
+
+    val button_group_orientation : MaterialButtonToggleGroup
+        get() = requireView().findViewById(R.id.button_group_orientation)
+
+    val button_group_wrap_modes : MaterialButtonToggleGroup
+        get() = requireView().findViewById(R.id.button_group_wrap_modes)
+
+    val button_group_vertical_chain_style : MaterialButtonToggleGroup
+        get() = requireView().findViewById(R.id.button_group_vertical_chain_style)
+
+    val button_group_horizontal_chain_style : MaterialButtonToggleGroup
+        get() = requireView().findViewById(R.id.button_group_horizontal_chain_style)
+
+    val seekbar_horizontal_bias : AppCompatSeekBar
+        get() = requireView().findViewById(R.id.seekbar_horizontal_bias)
+
+    val seekbar_vertical_bias : AppCompatSeekBar
+        get() = requireView().findViewById(R.id.seekbar_vertical_bias)
+
+    val button_group_vertical_alignments : MaterialButtonToggleGroup
+        get() = requireView().findViewById(R.id.button_group_vertical_alignments)
+
+    val button_group_horizontal_alignments : MaterialButtonToggleGroup
+        get() = requireView().findViewById(R.id.button_group_horizontal_alignments)
+
+    val flow : Flow
+        get() = requireView().findViewById(R.id.flow)
 
     override fun onCreateView(
         inflater: LayoutInflater,

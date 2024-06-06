@@ -5,16 +5,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
+import androidx.appcompat.widget.AppCompatSeekBar
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.fragment.app.Fragment
 import androidx.transition.TransitionManager
-import kotlinx.android.synthetic.main.layout_verrtical_flow.*
+import com.google.android.material.button.MaterialButtonToggleGroup
 
 /**
  * Created by lin min phyo on 2019-09-24.
  */
 
 class VerticalFlowFragment : Fragment() {
+
+    val parent : ViewGroup
+        get() = requireView() as ViewGroup
+
+    val flow : Flow
+        get() = requireView().findViewById(R.id.flow)
+
+    val button_group_wrap_modes : MaterialButtonToggleGroup
+        get() = requireView().findViewById(R.id.button_group_wrap_modes)
+
+    val button_group_chain_style : MaterialButtonToggleGroup
+        get() = requireView().findViewById(R.id.button_group_chain_style)
+
+    val seekbar_horizontal_bias : AppCompatSeekBar
+        get() = requireView().findViewById(R.id.seekbar_horizontal_bias)
+
+    val button_group_horizontal_alignments : MaterialButtonToggleGroup
+        get() = requireView().findViewById(R.id.button_group_horizontal_alignments)
 
     override fun onCreateView(
         inflater: LayoutInflater,
